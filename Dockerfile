@@ -195,7 +195,9 @@ RUN apk add --no-cache --virtual .build-deps-yarn \
     && rm yarn-v${YARN_VERSION}.tar.gz.asc yarn-v${YARN_VERSION}.tar.gz \
     && apk del .build-deps-yarn \
     \
-    && yarn global add npm@${NPM_VERSION}
+    && yarn global add npm@${NPM_VERSION} \
+    \
+    && yarn cache clean
 
 # erd
 ENV ERD_URL=https://github.com/cosmicvelocity/erd-build/raw/master/dist/erd
